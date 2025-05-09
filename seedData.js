@@ -61,6 +61,31 @@ export const seedData = async () => {
     mongoose.connection.close();
   }
 };
+export const seedUserData = async () => {
+  try {
+    console.log('🌱 Seeding data...');
 
-connectDB();
-seedData();
+    await connectDB();
+
+    // Clear existing data
+    await Promise.all([
+      User.deleteMany({})
+    ]);
+    const users = await User.insertMany([
+      { username: 'alicej', email: 'alice@example.com', password: 'hashedPassword1', role: 'journalist' },
+      { username: 'bobsmith', email: 'bob@example.com', password: 'hashedPassword2', role: 'journalist' },
+      { username: 'charlieb', email: 'charlie@example.com', password: 'hashedPassword3' },
+      { username: 'dianam', email: 'diana@example.com', password: 'hashedPassword4' },
+      { username: 'ethanh', email: 'ethan@example.com', password: 'hashedPassword5' },
+    ]);
+
+    console.log('✅ Users seeded.');
+  } catch (error) {
+    console.error('❌ Error seeding data:', error);
+    throw error;
+  } finally {
+    mongoose.connection.close();
+  }
+};
+// connectDB();
+// seedData();

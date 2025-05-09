@@ -27,6 +27,7 @@ app.use(express.json());
 app.use('/user', userRoutes);
 app.use('/post', postRoutes);
 app.use('/comment', commentRoutes);
+
 // app.use('/seed', seedRoutes);
 
 // Serve static files from public/

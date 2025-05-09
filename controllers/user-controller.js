@@ -1,9 +1,13 @@
 import User from '../models/user-model.js';
+import bcrypt from 'bcrypt';
+import passport from 'passport';
+
+
 
 // Index - Get all users
 async function getUsers(req, res) {
   try {
-    const users = await User.find({}).populate('post').populate('comment');
+    const users = await User.find({});
     console.log(users);
     res.status(200).json(users);
   } catch (error) {
@@ -33,6 +37,59 @@ async function getUserById(req, res) {
     res.status(400).json({ message: 'Error fetching user', error: err.message });
   }
 }
+
+// Register a new user
+export const registerUser = async (req, res) => {
+  try {
+      const { username, email, password } = req.body;
+
+      // Check if user already exists
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+          return res.status(400).json({ message: 'User already exists' });
+      }
+
+      // Hash the password
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      // Create a new user
+      const newUser = new User({ username, email, password: hashedPassword });
+      await newUser.save();
+
+      res.status(201).json({ message: 'User registered successfully', user: newUser });
+  } catch (error) {
+      res.status(500).json({ message: 'Error registering user', error: error.message });
+  }
+};
+
+// User login
+export const loginUser = async (req, res) => {
+  try {
+      const { email, password } = req.body;
+
+      // Find user by email
+      const user = await User.findOne({ email });
+      if (!user) {
+          return res.status(400).json({ message: 'Invalid email or password' });
+      }
+
+      // Compare the password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+          return res.status(400).json({ message: 'Invalid email or password' });
+      }
+
+      // Redirect to dashboard on successful login
+      res.status(200).json({ message: 'Login successful', user });
+  } catch (error) {
+      res.status(500).json({ message: 'Error logging in', error: error.message });
+  }
+};
+
+// Protected Dashboard route
+export const dashboard = (req, res) => {
+  res.status(200).json({ message: 'Welcome to the dashboard' });
+};
 
 // Update - Update a user's info
 async function updateUser(req, res) {
