@@ -15,18 +15,7 @@ const postSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  // tags: {
-  //   type: [String],
-  //   default: []
-  // },
   
-  // comments: [
-  //   {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: 'Comment'
-  //   }
-  // ],
-
 },{timestamps:true});
 
 export default mongoose.model('Post', postSchema);
