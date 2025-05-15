@@ -71,12 +71,6 @@ app.listen(PORT, () => {
 });
 
 
-// // Route Imports
-// import userRoutes from './routes/user-router.js';
-// import authRoutes from './routes/auth-router.js';  
-// import seedRoutes from './routes/seed-router.js';
-// import postRoutes from './routes/post-router.js';
-// import commentRoutes from './routes/comment-router.js';
 
 // dotenv.config();
 // connectDB();
