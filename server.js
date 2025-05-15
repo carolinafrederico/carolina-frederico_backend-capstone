@@ -70,15 +70,6 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-////////////////////////////////////////////////////////////////
-
-// import express from 'express';
-// import connectDB from './db/database.js';
-// import cors from 'cors';
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-// import dotenv from 'dotenv';
-// import session from 'express-session';
 
 // // Route Imports
 // import userRoutes from './routes/user-router.js';
