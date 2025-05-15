@@ -15,6 +15,7 @@ async function getPosts(req, res) {
 async function getPostById(req, res) {
   try {
     const post = await Post.findById(req.params.id);
+    console.log(post)
     if (!post) {
       return res.status(404).json({ message: 'Post not found' });
     }
