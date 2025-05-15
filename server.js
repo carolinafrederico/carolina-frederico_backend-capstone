@@ -72,45 +72,7 @@ app.listen(PORT, () => {
 
 
 
-
-// import userRoutes from './routes/user-router.js';
-// import postRoutes from './routes/post-router.js';
-// import commentRoutes from './routes/comment-router.js';
-// // import seedRoutes from './routes/seed-router.js';
-
-// dotenv.config();
-// connectDB ();
-// const app = express();
-// const PORT = process.env.PORT || 3001;
-
-// // Fix __dirname for ES modules
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
-// // Middleware
-// app.use(cors());
-// app.use(express.json());
-
-// // API routes
-// app.use('/user', userRoutes);
-// app.use('/post', postRoutes);
-// app.use('/comment', commentRoutes);
-
-// // app.use('/seed', seedRoutes);
-
-// // Serve static files from public/
-// app.use(express.static(path.join(__dirname, 'public')));
-
-
-// // Start the server
-// app.listen(PORT, () => {
-//   console.log(`Backend running at http://localhost:${PORT}`);
-// });
-
 /////////////////////////
-// import express from 'express';
-// import connectDB from './db/database.js';
-// import cors from 'cors';
 // import path from 'path';
 // import { fileURLToPath } from 'url';
 // import dotenv from 'dotenv';
