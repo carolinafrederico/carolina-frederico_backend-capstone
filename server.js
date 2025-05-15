@@ -72,31 +72,6 @@ app.listen(PORT, () => {
 
 
 
-// // Default Route (optional)
-// app.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Welcome to the PressRoom API' });
-// });
-
-// // Error Handling Middleware
-// app.use((err, req, res, next) => {
-//   console.error('Error:', err.message);
-//   res.status(500).json({ error: err.message });
-// });
-
-// // Start the server
-// app.listen(PORT, () => {
-//   console.log(`Server running at http://localhost:${PORT}`);
-// });
-
-/////////////////////////////////////
-// import express from 'express';
-// import connectDB from './db/database.js';
-// import cors from 'cors'; // (Cross-Origin Resource Sharing) middleware
-// import path from 'path'; // used to import the built-in path module, which provides utilities for working with file and directory paths. 
-// import { fileURLToPath } from 'url';
-// import dotenv from 'dotenv';
-// import session from 'express-session';
-
 
 // import userRoutes from './routes/user-router.js';
 // import postRoutes from './routes/post-router.js';
