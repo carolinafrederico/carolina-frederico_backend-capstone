@@ -80,15 +80,6 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: 'Error logging in', error: error.message });
   }
 };
-
-// Protected Dashboard route
-// export const dashboard = (req, res) => {
-//   if (!req.session.userId) {
-//     return res.status(401).json({ message: 'Unauthorized. Please log in.' });
-//   }
-//   res.status(200).json({ message: 'Welcome to the dashboard' });
-// };
-
 // User logout
 export const logoutUser = (req, res) => {
   req.session.destroy(() => {
@@ -126,19 +117,6 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-///////////
-// import User from '../models/user-model.js';
-// import bcrypt from 'bcrypt';
-
-// // Index - Get all users
-// export const getUsers = async (req, res) => {
-//   try {
-//     const users = await User.find({});
-//     res.status(200).json(users);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// };
 
 // // Create - Create a new user
 // export const createUser = async (req, res) => {
