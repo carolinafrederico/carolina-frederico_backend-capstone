@@ -118,49 +118,7 @@ export const deleteUser = async (req, res) => {
 };
 
 
-// // Create - Create a new user
-// export const createUser = async (req, res) => {
-//   try {
-//     const newUser = await User.create(req.body);
-//     res.status(201).json(newUser);
-//   } catch (err) {
-//     res.status(400).json({ message: 'Error creating user', error: err.message });
-//   }
-// };
 
-// // Show - Get one user by ID
-// export const getUserById = async (req, res) => {
-//   try {
-//     const user = await User.findById(req.params.id).populate('post').populate('comment');
-//     if (!user) {
-//       return res.status(404).json({ message: 'User not found' });
-//     }
-//     res.status(200).json(user);
-//   } catch (err) {
-//     res.status(400).json({ message: 'Error fetching user', error: err.message });
-//   }
-// };
-
-// // Register a new user
-// export const registerUser = async (req, res) => {
-//   try {
-//     const { username, email, password } = req.body;
-
-//     const existingUser = await User.findOne({ email });
-//     if (existingUser) {
-//       return res.status(400).json({ message: 'User already exists' });
-//     }
-
-//     const hashedPassword = await bcrypt.hash(password, 10);
-
-//     const newUser = new User({ username, email, password: hashedPassword });
-//     await newUser.save();
-
-//     res.status(201).json({ message: 'User registered successfully', user: newUser });
-//   } catch (error) {
-//     res.status(500).json({ message: 'Error registering user', error: error.message });
-//   }
-// };
 
 // // User login
 // export const loginUser = async (req, res) => {
