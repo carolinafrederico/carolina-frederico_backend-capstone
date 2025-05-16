@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Press Room - Backend Server README</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
-        h1, h2, h3 { color: #7B1E1E; }
-        pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; }
-        .section { margin-bottom: 20px; }
-    </style>
+    
 </head>
 <body>
 
